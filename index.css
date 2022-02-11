@@ -5,7 +5,7 @@
 }
 
 :root {
-  --backgroundColor: #1a1a1a;
+  --backgroundColor: rgba(26, 26, 26, 0.9);
   --b2: #252424;
   --fontColor: #dfdfdf;
   --accentColor: #ac94fa;
@@ -15,7 +15,9 @@
 }
 
 body {
+  line-height: 1.75;
   font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
 }
 
 .app {
@@ -24,6 +26,7 @@ body {
   background: var(--backgroundColor);
   color: var(--fontColor);
   min-height: 100vh;
+  width: 100%;
 }
 
 #navbar {
@@ -69,6 +72,11 @@ body {
   padding: 0 1em 0 0;
 }
 
+.nav-link:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
 .nav-link > a {
   text-decoration: none;
   color: var(--backgroundColor);
@@ -88,28 +96,75 @@ body {
 }
 
 #welcome-section > h1 {
-  color: var(--accentColor);
   font-family: "Roboto", serif;
   font-size: 5.5vw;
 }
 
+#welcome-section > h2 {
+  color: var(--accentColor);
+}
+
 #projects {
-  padding: 100px 0;
+  padding: 50px 0 0 0;
   height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   background-color: var(--mint);
   color: var(--fontColor);
 }
 
-#projects > h2 {
-  padding: -70px 0 0 0;
+.project-tile > a {
+  color: var(--fontColor);
+  text-decoration: none;
+}
+
+.project-tile:hover {
+  transform: scale(1.1);
 }
 
 #contact {
-  padding: 100px 0 0 0;
+  padding: 50px 0 0 0;
   height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #contact > h2 {
-  color: var(--accentColor);
   font-family: "Roboto", serif;
+}
+
+#contact-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 2vh 2vw;
+}
+
+#contact-links > * + * {
+  margin-left: 1em;
+}
+
+.contact-link:hover {
+  transform: scale(1.1);
+}
+
+.contact-link > a {
+  text-decoration: none;
+  color: var(--fontColor);
+}
+
+.contact-link > a:hover {
+  color: var(--accentColor);
+}
+
+@media screen and (max-width: 768px) {
+  #contact-links {
+    flex-wrap: wrap;
+  }
 }

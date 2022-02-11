@@ -1,17 +1,115 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --backgroundColor: #1a1a1a;
+  --b2: #252424;
+  --fontColor: #dfdfdf;
+  --accentColor: #ac94fa;
+  --navbarColor: #16bdca;
+  --mint: hsl(316, 30%, 36%);
+  --lavender-blush: hsl(248, 30%, 70%);
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
 }
 
 .app {
   display: flex;
   flex-direction: column;
-  background-color: aqua;
+  background: var(--backgroundColor);
+  color: var(--fontColor);
   min-height: 100vh;
 }
 
+#navbar {
+  background-color: var(--lavender-blush);
+  color: var(--backgroundColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0 2px 0 rgb(0 0 0 / 40%);
+}
+
+.line {
+  opacity: 0;
+}
+
+.firstLine {
+  animation-name: xTranslate;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes xTranslate {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  padding: 0 1em 0 0;
+}
+
+.nav-link > a {
+  text-decoration: none;
+  color: var(--backgroundColor);
+}
+
+.nav-links > * + * {
+  margin-left: 2em;
+}
+
 #welcome-section {
-  background-color: red;
-  border: 2px solid black;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome-section > h1 {
+  color: var(--accentColor);
+  font-family: "Roboto", serif;
+  font-size: 5.5vw;
+}
+
+#projects {
+  padding: 100px 0;
+  height: 100vh;
+  background-color: var(--mint);
+  color: var(--fontColor);
+}
+
+#projects > h2 {
+  padding: -70px 0 0 0;
+}
+
+#contact {
+  padding: 100px 0 0 0;
+  height: 100vh;
+}
+
+#contact > h2 {
+  color: var(--accentColor);
+  font-family: "Roboto", serif;
 }

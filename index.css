@@ -100,10 +100,16 @@ line {
 
 #welcome-section > h1 {
   font-family: "Roboto", serif;
-  font-size: 5.5vw;
 }
 
 #welcome-section > h2 {
+  color: var(--accentColor);
+}
+
+#text-link {
+  color: var(--fontColor);
+}
+#text-link:hover {
   color: var(--accentColor);
 }
 
